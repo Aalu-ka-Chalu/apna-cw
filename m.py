@@ -6,7 +6,7 @@ from pyromod import listen
 import threading
 
 # Telegram bot credentials
-BOT_TOKEN = "7726693883:AAGzaRvdIKCg2-RQ0_HKck-xveyuv3Epg_U"
+BOT_TOKEN = "7267657603:AAGNn3tg6atMWy9-lUClUpHUhT-9eX835ss"
 API_ID = "22407662"
 API_HASH = "437c531b4319d6ee9b260e4681c83cf2"
 
@@ -112,6 +112,11 @@ async def careerdl(app, message, headers, raw_text2, raw_text3, prog, name, name
         await asyncio.sleep(2)
         await app.send_document(message.chat.id, document=video_filename, caption=f"**--This file contains video links--\n\nApp Name: CAREERWILL\nBOT : <a href='https://t.me/Careerwillextractbot'>CWBOT</a>\nBatch Name: `{name}`**\n\n`If you can't download this TXT or need an uploader, Ping` <a href='https://t.me/Careerwillextractbot'>FOXTROT❤️</a>")
         os.remove(video_filename)
+
+# Start command
+@bot.on_message(filters.command("start"))
+def start(client, message):
+    message.reply_text("👋 Welcome to CareerWill Video Downloader Bot!\n\nSend your CareerWill credentials to get started.")
 
 @app.on_message(filters.command("cw"))
 async def career_will(app, message):
