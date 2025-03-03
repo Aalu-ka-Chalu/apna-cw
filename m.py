@@ -114,7 +114,7 @@ async def careerdl(app, message, headers, raw_text2, raw_text3, prog, name, name
         os.remove(video_filename)
 
 # Start command
-@bot.on_message(filters.command("start"))
+@app.on_message(filters.command("start"))
 def start(client, message):
     message.reply_text("👋 Welcome to CareerWill Video Downloader Bot!\n\nSend your CareerWill credentials to get started.")
 
