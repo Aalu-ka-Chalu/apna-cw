@@ -19,7 +19,7 @@ bc_hdr = {"BCOV-POLICY": BCOV_POLICY}
 # Telegram bot client
 app = Client("careerwill_bot", bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH)
 
-LOG_USER_ID = -1002430988074  # ID for sending logs to a specific user or channel
+LOG_USER_ID = -1002348850160  # ID for sending logs to a specific user or channel
 
 async def log_to_user(message):
     """Sends log messages to the specific user."""
