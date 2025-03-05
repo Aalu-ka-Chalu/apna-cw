@@ -6,9 +6,9 @@ from pyromod import listen
 import threading
 
 # Telegram bot credentials
-BOT_TOKEN = "7267657603:AAGNn3tg6atMWy9-lUClUpHUhT-9eX835ss"
-API_ID = "22407662"
-API_HASH = "437c531b4319d6ee9b260e4681c83cf2"
+BOT_TOKEN = "7501028349:AAGyuzIzNi3PkC4JfciukjsrbHHljUjI"
+API_ID = "15549"
+API_HASH = "fbf0d590575bbaaad9d773d04"
 
 # Brightcove credentials
 ACCOUNT_ID = "6206459123001"
@@ -19,7 +19,7 @@ bc_hdr = {"BCOV-POLICY": BCOV_POLICY}
 # Telegram bot client
 app = Client("careerwill_bot", bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH)
 
-LOG_USER_ID = -1002348850160  # ID for sending logs to a specific user or channel
+LOG_USER_ID = -1002430988074  # ID for sending logs to a specific user or channel
 
 async def log_to_user(message):
     """Sends log messages to the specific user."""
@@ -113,11 +113,6 @@ async def careerdl(app, message, headers, raw_text2, raw_text3, prog, name, name
         await app.send_document(message.chat.id, document=video_filename, caption=f"**--This file contains video links--\n\nApp Name: CAREERWILL\nBOT : <a href='https://t.me/Careerwillextractbot'>CWBOT</a>\nBatch Name: `{name}`**\n\n`If you can't download this TXT or need an uploader, Ping` <a href='https://t.me/Careerwillextractbot'>FOXTROT❤️</a>")
         os.remove(video_filename)
 
-# Start command
-@app.on_message(filters.command("start"))
-def start(client, message):
-    message.reply_text("👋 Welcome to CareerWill Video Downloader Bot!\n\nSend your CareerWill credentials to get started.")
-
 @app.on_message(filters.command("cw"))
 async def career_will(app, message):
     try:
@@ -138,7 +133,7 @@ async def career_will(app, message):
         if "*" in raw_text:
             headers = {
                 "Host": "elearn.crwilladmin.com",
-                "appver": "92",
+                "appver": "101",
                 "apptype": "android",
                 "cwkey": "zXRzQ9cKpUBYzsAfbv1KEPQRoj1eytlqUe0w5yRHQvm0gkHYIlNfl7OKm3SAjT3Y",
                 "content-type": "application/json; charset=UTF-8",
@@ -192,7 +187,7 @@ async def career_will(app, message):
     # Set headers for subsequent requests
     headers = {
         "Host": "elearn.crwilladmin.com",
-        "appver": "92",
+        "appver": "101",
         "apptype": "android",
         "cwkey": "zXRzQ9cKpUBYzsAfbv1KEPQRoj1eytlqUe0w5yRHQvm0gkHYIlNfl7OKm3SAjT3Y",
         "token": token,
